@@ -10,6 +10,8 @@ make clean可清除多餘檔案
 
 首先輸入AES格式，分別為AES-128, AES-192, AES-256，
 以下為範例輸入
+
+每個input皆為hex number，除了key size為十進制
 ![input.png](image/input.png "this is input")
 
 ## **Output Result**
