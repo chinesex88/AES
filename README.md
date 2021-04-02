@@ -7,6 +7,9 @@
 使用 make指令可直接 compile and run
 若已經compile過，可使用 make run指令
 make clean可清除多餘檔案
+**AES.cpp為符合Sample IO的程式檔，AES_upgrade.cpp 為支援AES-128, 192, 256的升級版本，IO有些許不同**
+
+### ***尚未公布Sample IO前***
 
 首先輸入AES格式，分別為AES-128, AES-192, AES-256，
 以下為範例輸入
@@ -14,7 +17,13 @@ make clean可清除多餘檔案
 每個input皆為hex number，除了key size為十進制
 ![input.png](image/input.png "this is input")
 
+### ***公布Sample IO後改為與 Sample IO相同***
+![input.png](image/IO_sample.png "this is input")
+
 ## **Output Result**
+
+### ***尚未公布Sample IO前***
+
 輸出會輸出加密與解密每個round的結果，以4*4矩陣表示每個state
 ![output_round.png](image/output_round.png "this is demo result")
 ...中間省略
@@ -23,6 +32,11 @@ make clean可清除多餘檔案
 ![output_cipher.png](image/output_cipher.png "this is cipher")
 最後解密完後輸出解密得到的plaintext，與輸入的paintext相同
 ![output_plain.png](image/output_plain.png "this is plain")
+
+### ***公布Sample IO 後***
+更改為與Sample IO相同
+![input.png](image/IO_sample_2.png "this is input")
+
 ## **code 講解**
 
 在開始加密前，要先將input的key expand成round key
@@ -162,6 +176,9 @@ AddRoundkey(round)很單純的就是將先前生成的round key與state做XOR也
 
 理解了加密後，由於是對稱加密，因此解密也相當容易，只要將加密的運算反過來操作即可。
 
+### ***公布Sample IO後***
+公布Sample IO後發現老師公布的解密每回合進行的操作與slide不同，因此做了些許修改，解密的round變成與加密的round完全相同。
 
 ## **總結**
 AES加密為很單純的對稱式加密，只須了解每個加密步驟後很單純的實作出來即可，中間牽涉到一些有限體的概念並不是特別複雜。
+公布Sample IO前便完成作業，因此第一版的格式不同，但支援AES-128, 192, 256等加密。
